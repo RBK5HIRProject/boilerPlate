@@ -4,12 +4,12 @@ import { Button, Card, CardSection, Playquiz } from '../../../../common';
 import { Image } from 'react-native';
 import ReduceSyntax from '../SubSubSprints/reduceSyntax';
 import ReduceSyntaxExplanation from '../SubSubSprints/reduceSyntaxExplanation';
+import ReduceExample from '../SubSubSprints/reduceExample';
 
-class Reduce extends Component {
+export default class Reduce extends Component {
   render() {
     const topic = 'Reduce, Improve Reduce';
     const introduction = 'The reduce( ) method executes a reducer function (that you provide) on each member of the array resulting in single output value.';
-    const end = '[0,1,2,3,4].reduce(function(acc,elem,i){ return acc+elem })';
     return (
       <Card>
         <CardSection>
@@ -21,7 +21,7 @@ class Reduce extends Component {
         </CardSection>
         <CardSection style={{ flexDirection: 'row' }}>
           <Image
-            style={{ height: 100, width: 355 }}
+            style={{ height: 100, width: 350 }}
             source={require('../assets/reduce.png')} />
         </CardSection>
 
@@ -35,55 +35,35 @@ class Reduce extends Component {
 
         <ReduceSyntaxExplanation />
 
+        <ReduceExample />
 
-        <CardSection >
+        {/* <ReduceExampleExplanation /> */}
+        <CardSection  >
           <Text style={Styles.boldText}>
-            Example:&nbsp;{'\n'}
-            <Text style={Styles.array}>
-              [0,1,2,3,4]
-            </Text>
-            .
-            <Text style={Styles.reduce}>
-              reduce
-            </Text>
-            ({'\n'}
-            <Text style={Styles.cb}>
-              &nbsp;&nbsp;function
-            </Text>
-            (
-            <Text style={Styles.acc}>
-              acc
-            </Text>
-            ,
-            <Text style={Styles.elem}>
-              elem
-            </Text>
-            ,
-            <Text style={Styles.i}>
-              i
-            </Text>
-            ){'{'}{'\n'}
-            <Text style={Styles.array}>
-              &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;
-            </Text>
-            <Text style={Styles.cb}>
-              acc+elem{'\n'}
-            </Text>
-            &nbsp;&nbsp;},{'\n'}
-            <Text style={Styles.iv}>
-              iv
-            </Text>
-            )
+            Let's see what happened step by step:
           </Text>
         </CardSection>
 
         <CardSection >
-          <Text style={{ fontWeight: 'bold', color: 'black' }}>
-            The Last Version : {"\n"}{"\n"}
-            <Text style={{ fontWeight: 'bold', color: 'orange' }}>
-              {end}{"\n"}
-            </Text>
+          <Image
+            style={{ width: 340, height: 125 }}
+            source={require('../assets/reduceWithIV.png')} />
+        </CardSection>
+
+        <CardSection  >
+          <Text style={Styles.boldText}>
+            Now what if we use improve reduce ?{'\n'}
+            What is improve reduce first ?{'\n'}
+            it is the same of reduce but without iv{'\n'}
+            acc:will be array[0], i:start from 1{'\n'}
+            Let's see what happened step by step:
           </Text>
+        </CardSection>
+
+        <CardSection >
+          <Image
+            style={{ width: 340, height: 99 }}
+            source={require('../assets/reduceWithoutIV.png')} />
         </CardSection>
 
         <CardSection>
@@ -109,7 +89,7 @@ const Styles = StyleSheet.create({
   headerTextStyle: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: 'black'
+    color: 'black',
   },
   thumbnailStyle: {
     height: 46,
@@ -130,7 +110,6 @@ const Styles = StyleSheet.create({
     color: 'black',
     fontSize: 17,
   },
-
   text: {
     color: 'black'
   },
@@ -145,19 +124,14 @@ const Styles = StyleSheet.create({
   },
   acc: {
     color: '#9932CC',
-
   },
   elem: {
     color: '#FF8C00',
-
   },
   i: {
     color: 'red',
-
   },
   iv: {
     color: '#FF00FF',
-
   },
 });
-export default Reduce;

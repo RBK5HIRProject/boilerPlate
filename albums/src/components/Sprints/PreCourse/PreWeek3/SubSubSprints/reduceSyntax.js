@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Button, Card, CardSection, Playquiz } from '../../../../common';
 import { Image } from 'react-native';
 
-
 export default class ReduceSyntax extends Component {
   render() {
     return (
@@ -45,16 +44,11 @@ export default class ReduceSyntax extends Component {
 }
 
 const Styles = StyleSheet.create({
-  boldText: {
-    fontWeight: 'bold',
-    color: 'black'
-  },
   boldHeader: {
     fontWeight: 'bold',
     color: 'black',
     fontSize: 17,
   },
-
   text: {
     color: 'black'
   },
@@ -69,18 +63,14 @@ const Styles = StyleSheet.create({
   },
   acc: {
     color: '#9932CC',
-
   },
   elem: {
     color: '#FF8C00',
-
   },
   i: {
     color: 'red',
-
   },
   iv: {
     color: '#FF00FF',
-
   },
 });
