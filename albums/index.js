@@ -32,10 +32,10 @@ import HigherOrderEach from './src/components/Sprints/PreCourse/PreWeek2/SubSpri
 import Map from './src/components/Sprints/PreCourse/PreWeek2/SubSprints/Map';
 import Filter from'./src/components/Sprints/PreCourse/PreWeek2/SubSprints/Filter'
 // PC Week 3 Sprints
-import HTMLCSSjQuery from './src/components/Sprints/PreCourse/PreWeek3/SubSprints/HTMLCSSjQuery';
+import Reduce from './src/components/Sprints/PreCourse/PreWeek3/SubSprints/Reduce';
 import AbstractClosureDM from './src/components/Sprints/PreCourse/PreWeek3/SubSprints/AbstractClosureDM';
 import OOP from './src/components/Sprints/PreCourse/PreWeek3/SubSprints/OOP';
-import Reduce from './src/components/Sprints/PreCourse/PreWeek3/SubSprints/Reduce';
+import HTMLCSSjQuery from './src/components/Sprints/PreCourse/PreWeek3/SubSprints/HTMLCSSjQuery';
 // PC Week 4 Sprints
 import Git from './src/components/Sprints/PreCourse/PreWeek4/SubSprints/Git';
 import Testing from './src/components/Sprints/PreCourse/PreWeek4/SubSprints/Testing';

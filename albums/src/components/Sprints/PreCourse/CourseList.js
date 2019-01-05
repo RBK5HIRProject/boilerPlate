@@ -7,18 +7,24 @@ import { Header, Button } from '../../common';
 
 import CourseDetail from './CourseDetail';
 
+
+//joza justt to test my sprints
+import Reduce from './PreWeek3/SubSprints/Reduce';
+import AbstractClosureDM from './PreWeek3/SubSprints/AbstractClosureDM';
+import OOP from './PreWeek3/SubSprints/OOP';
+
 class CourseList extends Component {
-  state = { 
+  state = {
     courses: [{
-      topic: 'Prep Week 1', 
-      introduction: 'Function, booleans, comparisons, logical operators, repetition, variables, while loop, array, for', 
+      topic: 'Prep Week 1',
+      introduction: 'Function, booleans, comparisons, logical operators, repetition, variables, while loop, array, for',
       image: require('../../../assets/loop.png'),
       // put subsprint stack navigator name in menuOptions array
       menuOptions: [
-        'JavaScript Fundamentals and Functions', 
-        'Booleans, Comparisons, and Operators', 
-        'Variables in JavaScript', 
-        'While Loop', 
+        'JavaScript Fundamentals and Functions',
+        'Booleans, Comparisons, and Operators',
+        'Variables in JavaScript',
+        'While Loop',
         'Arrays and For Loops'
       ]
     }, {
@@ -26,10 +32,10 @@ class CourseList extends Component {
       introduction: 'Objects, Data Modeling, Higher Order Function, each function, map function, filter function',
       image: require('../../../assets/html.png'),
       menuOptions: [
-        'Objects', 
+        'Objects',
         'Data Modeling',
-        'Higher Order Function: Each', 
-        'Higher Order Function: Map', 
+        'Higher Order Function: Each',
+        'Higher Order Function: Map',
         'Higher Order Function: Filter'
       ]
     }, {
@@ -37,11 +43,11 @@ class CourseList extends Component {
       introduction: 'Reduce, Abstraction, Closure, Data Modeling, OOP, HTML, CSS, jQuery',
       image: require('../../../assets/git.png'),
       menuOptions: [
-        'Reduce', 
-        'Closures And Adding Methods', 
-        'OOP', 
+        'Reduce',
+        'Closures And Adding Methods',
+        'OOP',
         'HTML, CSS and jQuery'
-      ]      
+      ]
     }, {
       topic: 'Prep Week 4',
       introduction: 'More indepth view of Web Development with jQuery, how to use Git, and understand the basics of testing',
@@ -52,18 +58,19 @@ class CourseList extends Component {
         'Web Development'
       ]
     }
-  ]};
+    ]
+  };
 
-   // componentWillMount() {
-   // 	axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-   // 		.then(
-   // 			response => this.setState({courses: response.data})
-   // 		)
-   // }
+  // componentWillMount() {
+  // 	axios.get('https://rallycoding.herokuapp.com/api/music_albums')
+  // 		.then(
+  // 			response => this.setState({courses: response.data})
+  // 		)
+  // }
 
   mapOutCourses() {
     return this.state.courses.map(element => (
-      <CourseDetail key = {element.topic} info = {element} gotoButton = {this.gotoButton.bind(this)}/>
+      <CourseDetail key={element.topic} info={element} gotoButton={this.gotoButton.bind(this)} />
     ))
   }
 
@@ -74,8 +81,10 @@ class CourseList extends Component {
   render() {
     return (
       <ScrollView>
-        <Header onPress = {this.props.navigation.openDrawer.bind(this)}/>
-        {this.mapOutCourses()}
+        {/* jozaa need to uncomment this line */}
+        {/* <Header onPress = {this.props.navigation.openDrawer.bind(this)}/>
+        {this.mapOutCourses()} */}
+        <Reduce />
       </ScrollView>
     );
   }

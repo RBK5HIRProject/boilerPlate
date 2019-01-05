@@ -2,75 +2,97 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button, Card, CardSection, Playquiz } from '../../../../common';
 import { Image } from 'react-native';
+import ReduceSyntax from '../SubSubSprints/reduceSyntax';
+import ReduceSyntaxExplanation from '../SubSubSprints/reduceSyntaxExplanation';
 
 class Reduce extends Component {
-
   render() {
-    const { thumbnailStyle, headerConetentStyle, thumbnailContainerStyle, headerTextStyle, boldText } = Styles;
-    const topic = 'Reduce, Improve reduce';
-    const introduction = 'The reduce() method executes a reducer function (that you provide) on each member of the array resulting in a single output value.';
-    const body = [
-      [
-        'array.reduce(cb(acc,elem,i), iv)', 
-        'don’t forget to use return inside the cb\n\
-cb (callback): Function to execute on each element in the array.\n\
-acc (accumulator): The accumulator accumulates the callback\'\s return values; it is the accumulated value previously returned in the last invocation of the callback, or initialValue, if supplied.\n\
-elem (currentValue): The current element being processed in the array.\n\
-i (currentIndexOptional): The index of the current element being processed in the array. Starts at index 0, if an initialValue is provided, and at index 1 otherwise.\n\
-iv (initialValueOptional): Value to use as the first argument to the first call of the callback. If no initial value is supplied, the first element in the array will be used. Calling reduce() on an empty array without an initial value is an error.'
-      ]
-    ]
+    const topic = 'Reduce, Improve Reduce';
+    const introduction = 'The reduce( ) method executes a reducer function (that you provide) on each member of the array resulting in single output value.';
     const end = '[0,1,2,3,4].reduce(function(acc,elem,i){ return acc+elem })';
-
     return (
-      
       <Card>
         <CardSection>
-          <View style = {headerConetentStyle}>
-            <Text style = {headerTextStyle}>
+          <View style={Styles.headerConetentStyle}>
+            <Text style={Styles.headerTextStyle}>
               {topic}
             </Text>
-          </View>				
+          </View>
         </CardSection>
-        <CardSection style={{ flexDirection: 'row'}}>
-        <Image 
-         style= {{height: 100 ,width: 355}}
-         source={require('../assets/reduce.png')}/>
-        </CardSection>
-
-        <CardSection>
-          <Text>
-          {introduction}{"\n"}
-          </Text>
+        <CardSection style={{ flexDirection: 'row' }}>
+          <Image
+            style={{ height: 100, width: 355 }}
+            source={require('../assets/reduce.png')} />
         </CardSection>
 
         <CardSection>
-          <Text style={ boldText }>
-            {body[0][0]}
-          </Text>
-        </CardSection>
-        <CardSection>
-          <Text>
-            {body[0][1]}
+          <Text style={Styles.text}>
+            {introduction}
           </Text>
         </CardSection>
 
-        <CardSection>
-          <Text style={{fontWeight:'bold',color:'black'}}>
+        <ReduceSyntax />
+
+        <ReduceSyntaxExplanation />
+
+
+        <CardSection >
+          <Text style={Styles.boldText}>
+            Example:&nbsp;{'\n'}
+            <Text style={Styles.array}>
+              [0,1,2,3,4]
+            </Text>
+            .
+            <Text style={Styles.reduce}>
+              reduce
+            </Text>
+            ({'\n'}
+            <Text style={Styles.cb}>
+              &nbsp;&nbsp;function
+            </Text>
+            (
+            <Text style={Styles.acc}>
+              acc
+            </Text>
+            ,
+            <Text style={Styles.elem}>
+              elem
+            </Text>
+            ,
+            <Text style={Styles.i}>
+              i
+            </Text>
+            ){'{'}{'\n'}
+            <Text style={Styles.array}>
+              &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;
+            </Text>
+            <Text style={Styles.cb}>
+              acc+elem{'\n'}
+            </Text>
+            &nbsp;&nbsp;},{'\n'}
+            <Text style={Styles.iv}>
+              iv
+            </Text>
+            )
+          </Text>
+        </CardSection>
+
+        <CardSection >
+          <Text style={{ fontWeight: 'bold', color: 'black' }}>
             The Last Version : {"\n"}{"\n"}
-          <Text style={{fontWeight:'bold',color:'orange'}}>
-            {end}{"\n"}
-          </Text>
+            <Text style={{ fontWeight: 'bold', color: 'orange' }}>
+              {end}{"\n"}
+            </Text>
           </Text>
         </CardSection>
 
         <CardSection>
-          <Button onPress = {()=>this.props.navigation.navigate('Project')}>
+          <Button onPress={() => this.props.navigation.navigate('Project')}>
             Next
           </Button>
         </CardSection>
         <CardSection>
-          <Button onPress = {()=>this.props.navigation.navigate('PCList')}>
+          <Button onPress={() => this.props.navigation.navigate('PCList')}>
             Home
           </Button>
         </CardSection>
@@ -82,10 +104,12 @@ iv (initialValueOptional): Value to use as the first argument to the first call 
 const Styles = StyleSheet.create({
   headerConetentStyle: {
     flexDirection: 'column',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
   },
   headerTextStyle: {
-    fontSize: 30
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'black'
   },
   thumbnailStyle: {
     height: 46,
@@ -98,7 +122,42 @@ const Styles = StyleSheet.create({
     marginRight: 20
   },
   boldText: {
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+    color: 'black'
+  },
+  boldHeader: {
+    fontWeight: 'bold',
+    color: 'black',
+    fontSize: 17,
+  },
+
+  text: {
+    color: 'black'
+  },
+  array: {
+    color: 'red',
+  },
+  reduce: {
+    color: 'blue',
+  },
+  cb: {
+    color: 'green',
+  },
+  acc: {
+    color: '#9932CC',
+
+  },
+  elem: {
+    color: '#FF8C00',
+
+  },
+  i: {
+    color: 'red',
+
+  },
+  iv: {
+    color: '#FF00FF',
+
+  },
 });
 export default Reduce;
