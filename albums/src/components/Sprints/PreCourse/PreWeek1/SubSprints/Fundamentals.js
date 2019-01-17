@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button, Card, CardSection, Playquiz } from '../../../../common';
+import { Image } from 'react-native';
 
 class Fundamentals extends Component {
   constructor(props) {
@@ -68,7 +69,8 @@ class Fundamentals extends Component {
   render() {
     const { headerConetentStyle, headerTextStyle, container, textContainer } = Styles;
     const topic = 'Fundamentals and Functions'
-    const introduction = 'This section is dedicated to reviewing JavaScript fundamentals';
+    const introduction = 'The Term type refers to the different kind of values we might use in our programs';
+    const { thumbnailStyle }=Styles
     return (
       <Card>
         <CardSection>
@@ -80,34 +82,48 @@ class Fundamentals extends Component {
         </CardSection>
 
         <CardSection>
-          <Text>
-            Introduction:{"\n"}{introduction}{"\n"}
+          <Text style={{fontWeight:'bold'}}>
+          Types:{"\n"}
+          <Text style={{fontWeight:'normal'}}>
+            {introduction}{"\n"}{"\n"}
+            <Text style={{fontWeight:'bold'}}>
+              Javascript Data Types:{"\n"}
+              <Text style={{fontWeight:'normal'}}>
+              JavaScript provides different data types to hold different types of values. There are two types of data types in JavaScript:{"\n"}
+              <Text style={{ color:'purple'}}>
+                1.Primitive data type{"\n"}
+                2.Non-primitive (reference) data type
+              </Text>
+              </Text>
+            </Text>
           </Text>
+          </Text>
+        </CardSection>
+        <CardSection style={{flexDirection: 'column', flex: 1}}>
+          <Image 
+              style= {thumbnailStyle}
+              source={require('../../../../../assets/80.jpg')}/>
         </CardSection>
 
         <CardSection style = { container }>
-        <Text style = { textContainer }>
+        
           <Text style={{ fontWeight: 'bold', color: 'purple' }}>
-            There are 6 different primitive data types in JavaScript.
-            A primitive is data that is not an object and has no methods
+            Here are some exampels :
           {"\n"}{"\n"}
+              <Text style={{fontWeight:'bold',color:'black'}}>Number:</Text>
+              <Text style={{fontWeight:'normal',color:'black'}}>1, 2, 3</Text> {"\n"}
+              <Text style={{fontWeight:'bold',color:'black'}}> String:</Text>
+              <Text style={{fontWeight:'normal',color:'black'}}>"Hello World"</Text>  {"\n"}
+              <Text style={{fontWeight:'bold',color:'black'}}> Boolean:</Text>
+              <Text style={{fontWeight:'normal',color:'black'}}>true, false</Text> {"\n"}
+              <Text style={{fontWeight:'bold',color:'black'}}> Null:</Text>
+              <Text style={{fontWeight:'normal',color:'black'}}>var helloWorld = null;</Text> {"\n"}
+             <Text style={{fontWeight:'bold',color:'black'}}> Undefined:</Text>
+             <Text style={{fontWeight:'normal',color:'black'}}>var goodbyeWorld = undefined;</Text> {"\n"}
+              <Text style={{fontWeight:'bold',color:'black'}}> Symbol: </Text>
+              <Text style={{fontWeight:'normal',color:'black'}}>var symbol = Symbol();</Text>{"\n"}
           </Text>
-          <Text>
-              Number: 1, 2, 3
-              {"\n"}
-              String: "Hello World"
-              {"\n"}
-              Boolean: true, false
-              {"\n"}
-              Null: var helloWorld = null;
-              {"\n"}
-              Undefined: var goodbyeWorld = undefined;
-              {"\n"}
-              Symbol: var symbol = Symbol();
-              {"\n"}
-          </Text>
-          </Text>
-        </CardSection>
+         </CardSection>
 
         <CardSection style = { container }>
           <Text style = { textContainer }>
@@ -160,8 +176,8 @@ const Styles = StyleSheet.create({
     fontSize: 30
   },
   thumbnailStyle: {
-    height: 46,
-    width: 46
+    height: 150,
+    width: 350
   },
   thumbnailContainerStyle: {
     justifyContent: 'center',
