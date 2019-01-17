@@ -100,34 +100,30 @@ class Fundamentals extends Component {
           </Text>
         </CardSection>
         <CardSection style={{flexDirection: 'column', flex: 1}}>
-        <Image 
+          <Image 
               style= {thumbnailStyle}
               source={require('../../../../../assets/80.jpg')}/>
         </CardSection>
 
         <CardSection style = { container }>
-        <Text style = { textContainer }>
+        
           <Text style={{ fontWeight: 'bold', color: 'purple' }}>
-            There are 6 different primitive data types in JavaScript.
-            A primitive is data that is not an object and has no methods
+            Here are some exampels :
           {"\n"}{"\n"}
+              <Text style={{fontWeight:'bold',color:'black'}}>Number:</Text>
+              <Text style={{fontWeight:'normal',color:'black'}}>1, 2, 3</Text> {"\n"}
+              <Text style={{fontWeight:'bold',color:'black'}}> String:</Text>
+              <Text style={{fontWeight:'normal',color:'black'}}>"Hello World"</Text>  {"\n"}
+              <Text style={{fontWeight:'bold',color:'black'}}> Boolean:</Text>
+              <Text style={{fontWeight:'normal',color:'black'}}>true, false</Text> {"\n"}
+              <Text style={{fontWeight:'bold',color:'black'}}> Null:</Text>
+              <Text style={{fontWeight:'normal',color:'black'}}>var helloWorld = null;</Text> {"\n"}
+             <Text style={{fontWeight:'bold',color:'black'}}> Undefined:</Text>
+             <Text style={{fontWeight:'normal',color:'black'}}>var goodbyeWorld = undefined;</Text> {"\n"}
+              <Text style={{fontWeight:'bold',color:'black'}}> Symbol: </Text>
+              <Text style={{fontWeight:'normal',color:'black'}}>var symbol = Symbol();</Text>{"\n"}
           </Text>
-          <Text>
-              Number: 1, 2, 3
-              {"\n"}
-              String: "Hello World"
-              {"\n"}
-              Boolean: true, false
-              {"\n"}
-              Null: var helloWorld = null;
-              {"\n"}
-              Undefined: var goodbyeWorld = undefined;
-              {"\n"}
-              Symbol: var symbol = Symbol();
-              {"\n"}
-          </Text>
-          </Text>
-        </CardSection>
+         </CardSection>
 
         <CardSection style = { container }>
           <Text style = { textContainer }>
